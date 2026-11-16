@@ -40,3 +40,24 @@ Códigos: 200/201/204 éxito · 400 validación · 401 login · 404 no existe ·
 
 ## 5. Pruebas
 Importa `docs/api-eventos.postman_collection.json` en Postman, Thunder Client o Insomnia. Cada endpoint tiene un caso de éxito y uno de error. Ejecuta las carpetas en orden (la de Users va primero y guarda los ids en variables; Auth usa el usuario ana@correo.com / 1234 creado ahí). La carpeta final elimina los datos de prueba.
+
+# Nyxa — Venta de boletos para eventos (corte 3)
+
+Backend (API REST con Node.js, Express y MySQL) y frontend (HTML/CSS/JS) integrados.
+
+## Requisitos
+- Node.js y MySQL
+
+## Instalación
+1. `npm install`
+2. Copia `.env.example` a `.env` y pon los datos de tu base de datos.
+3. Ejecuta `database/schema.sql` en MySQL para crear las tablas.
+4. Si tienes usuarios con contraseñas en texto plano, migra con: `node scripts/migrarPasswords.js`
+5. Enciende la API: `npm start` (http://localhost:3000/api).
+   Documentación Swagger: http://localhost:3000/api-docs
+
+## Frontend
+Abre `frontend/index.html` con Live Server (VS Code) con la API encendida.
+
+## Seguridad
+Las contraseñas se almacenan como hash bcrypt con salt (nunca en texto plano).
